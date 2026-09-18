@@ -1,0 +1,16 @@
+// FAILED DEPLOYMENT REFERENCE — DO NOT DEPLOY AS A CLOUDFLARE WORKER.
+// This Node/Express entrypoint failed Worker deployment because dist/index.js is not a Worker module.
+// Use the root wrangler.jsonc for the deployable sentinel-atlas-superagent Worker.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sentinel-atlas-node-reference-failed",
+  "compatibility_date": "2026-09-18",
+  "main": "./dist/index.js",
+  "assets": {
+    "directory": "./dist/public",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

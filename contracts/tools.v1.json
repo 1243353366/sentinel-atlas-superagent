@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "principle": "The control plane owns policy and permissions; tools return evidence and provenance only.",
+  "tools": {
+    "analyze": { "path": "/tools/analyze", "timeoutMs": 5000, "permissions": ["read:observation"] },
+    "evaluate": { "path": "/tools/evaluate", "timeoutMs": 5000, "permissions": ["read:evidence"] },
+    "telemetry": { "path": "/tools/telemetry", "timeoutMs": 5000, "permissions": ["read:telemetry"] },
+    "graph": { "path": "/tools/graph", "timeoutMs": 5000, "permissions": ["read:evidence"] }
+  },
+  "failureSemantics": {
+    "invalidInput": "return 400 with error code and requestId",
+    "toolFailure": "return 503 with retryable false unless explicitly marked retryable",
+    "noAuthorityEscalation": "tools may not grant permissions or execute payloads"
+  }
+}

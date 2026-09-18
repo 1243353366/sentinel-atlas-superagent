@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sentinel-atlas-superagent",
+  "main": "./cloudflare/sentinel-atlas-superagent.js",
+  "compatibility_date": "2026-09-18",
+  "workers_dev": true,
+  "observability": {
+    "enabled": true
+  }
+}

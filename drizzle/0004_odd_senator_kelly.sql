@@ -1,0 +1,1 @@
+ALTER TABLE `player_progress` MODIFY COLUMN `unlocked` text NOT NULL;
